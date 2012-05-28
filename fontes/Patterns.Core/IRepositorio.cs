@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Patterns.Core
 {
@@ -11,6 +12,7 @@ namespace Patterns.Core
         void Exclui(long id);
 
         IEnumerable<TEntidade> Lista();
+        IQueryable<TEntidade> QueryableLista();
 
         long Total { get; }
     }
