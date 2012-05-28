@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using NHibernate;
 using NHibernate.Criterion;
+using NHibernate.Linq;
 using Patterns.Core;
 using Patterns.Persistencia.Configuracao.NHibernate;
 
@@ -64,6 +65,11 @@ namespace Patterns.Persistencia
         public virtual IEnumerable<TEntidade> Lista()
         {
             return NhSession.CreateCriteria<TEntidade>().List<TEntidade>();
+        }
+
+        public IQueryable<TEntidade> QueryableLista()
+        {
+            return NHSession.Query<TEntidade>();
         }
     }
 }
