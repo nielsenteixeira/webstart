@@ -25,6 +25,11 @@ namespace Patterns.Web.Controllers
         {
             return new OK(todasAsPessoas.Lista());
         }
-
+        
+        [HttpGet]
+        public ActionResult ListaComNome(string nome)
+        {
+            return new OK(repositorioDePessoas.QueryableLista().where(p=> p.Nome.Contains("Hamon")); 
+        }
     }
 }
